@@ -6,7 +6,8 @@ $film = [
         "title" => "Via col Vento",
         "originalTitle" => "Gone with the Wind", 
         "year" => "1939", 
-        "minutes" => "238", 
+        "minutes" => "238",
+        "poster" => "https://image.tmdb.org/t/p/w342/lNz2Ow0wGCAvzckW7EOjE03KcYv.jpg",
         "genres" => ['drammatico', 'guerra', 'sentimentale', 'storico'],
         "actors" => [
 
@@ -34,6 +35,7 @@ $film = [
         "year" => "1994", 
         "minutes" => "142", 
         "genres" => ['commedia','drammatico','guerra' ],
+        "poster" => "https://image.tmdb.org/t/p/w342/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
         "actors" => [
 
             new Attore([
@@ -55,7 +57,8 @@ $film = [
         "title" => "Matrix Resurrections",
         "originalTitle" => "The Matrix Resurrections", 
         "year" => "2021", 
-        "minutes" => "148", 
+        "minutes" => "148",
+        "poster" => "https://image.tmdb.org/t/p/w342/8c4a8kE7PizaGQQnditMmI1xbRp.jpg",
         "genres" => ['azione','fantascienza'],
         "actors" => [
 
