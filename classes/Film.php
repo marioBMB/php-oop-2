@@ -8,7 +8,7 @@
         private $year;
         private $minutes;
         private $poster;
-        private $director;
+        private $director; //regista
         private $genres = [];
 
 
@@ -16,9 +16,6 @@
 
 
         public function __construct(array $info){
-
-            // var_dump($info);
-            // extract($info);
 
             if (!empty($info)){
                 
@@ -29,11 +26,9 @@
 
                         if (is_array($info[$key])){
                         
-                            if ($key == 'genres'){
                                 for ($i = 0; $i < count($info[$key]); $i++){
-                                    $this->addGenre($info[$key][$i]);
+                                    array_push($this->${$key."s"}, $info[$key][$i]);
                                 }
-                            }
                         }
                         else {
                             $this->$key = $info[$key];
@@ -50,6 +45,13 @@
             $string = "<b>{$this->title}</b> [{$this->year}] - {$this->minutes} min. - " .$genres;
             return $string;
         }
+
+        public function getCastingInfo(){
+
+            
+            
+        }
+
 
         public function getTitle(){
             return $this->title;
@@ -81,6 +83,10 @@
 
         public function addGenre($genre){
             array_push($this->genres, $genre);
+        }
+
+        public function addActor(Attore $actor){
+            array_push($this->actors, $actor);
         }
 
         public function getDirector(){

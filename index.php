@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__."/includes.php";
+
 $film = [
 
     new Film([
@@ -24,7 +26,7 @@ $film = [
                 "asKnowsAs" => "Vivian Mary Hartley",
                 "birthday" => " 05/11/1913", 
                 "deathday" => "08/07/1967",
-                "gender" => "male"
+                "gender" => "female"
             ]),  
         ],
     ]),
@@ -91,25 +93,28 @@ $sale = [
     new Sala("3", 140, 1),
     new Sala("4", 140, 1),
     new Sala("5", 140, 1),
-    new SalaImmersiva("1I", 120, -1, 1, 0, 0),
-    new SalaImmersiva("2I", 120, -1, 1, 1, 0),
+    new Sala4d("I1", 120, -1, true, false, false),
+    new Sala4d("I2", 120, -1, true, true, false),
 ];
 
 
 $spettacoli = [
 
-    new Spettacolo($films[2], $sale[5], "10/01/2022 19:00"),
-    new Spettacolo($films[2], $sale[6], "10/01/2022 19:00"),
-    new Spettacolo($films[2], $sale[5], "10/01/2022 21:00"),
-    new Spettacolo($films[2], $sale[6], "10/01/2022 21:00"),
-    new Spettacolo($films[2], $sale[5], "11/01/2022 17:00"),
-    new Spettacolo($films[2], $sale[6], "11/01/2022 17:00")
+    new Spettacolo($films[2], $sale[5], "2022-01-10 19:00"),
+    new Spettacolo($films[2], $sale[6], "2022-01-10 20:45"),
+    new Spettacolo($films[2], $sale[5], "2022-01-10 21:00"),
+    new Spettacolo($films[2], $sale[6], "2022-01-10 21:00"),
+    new Spettacolo($films[2], $sale[5], "2022-01-11 17:00"),
+    new Spettacolo($films[2], $sale[6], "2022-01-11 17:00"),
+    new Spettacolo($films[1], $sale[4], "2022-01-12 17:00"),
+    new Spettacolo($films[1], $sale[0], "2022-01-12 19:00"),
 ];
 
 
+$cinema = new Cinema($sale, "Red Carpet", "via E. Ferrari, Matera (MT)");
+$cinema->setSpettacoli($spettacoli);
 
-
-
+var_dump($cinema);
 
 ?>
 <!DOCTYPE html>
